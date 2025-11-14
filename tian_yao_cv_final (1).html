@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tian Yao - Academic CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.5;
+            color: #000;
+            background: #fff;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 60px;
+            position: relative;
+        }
+
+        /* Left sidebar with name */
+        .sidebar {
+            position: relative;
+        }
+
+        .name-vertical {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-size: 72px;
+            font-weight: 900;
+            letter-spacing: 20px;
+            position: sticky;
+            top: 40px;
+            height: fit-content;
+        }
+
+        .sidebar-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .sidebar-section {
+            margin-bottom: 40px;
+        }
+
+        .sidebar-section h3 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .sidebar-section p, 
+        .sidebar-section a {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
+            text-decoration: none;
+        }
+
+        .sidebar-section a {
+            text-decoration: underline;
+        }
+
+        .sidebar-section a:hover {
+            color: #000;
+        }
+
+        /* Main content */
+        .main-content {
+            padding-top: 10px;
+        }
+
+        .header-info {
+            margin-bottom: 40px;
+            font-size: 15px;
+        }
+
+        .header-info .title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            margin-top: 40px;
+            text-transform: uppercase;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .experience-item,
+        .education-item,
+        .publication-item,
+        .presentation-item,
+        .exhibition-item,
+        .award-item {
+            margin-bottom: 25px;
+        }
+
+        .item-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .item-meta {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .item-meta span {
+            color: #999;
+        }
+
+        .item-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .item-description ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .item-description li {
+            margin-bottom: 6px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .item-description li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+        }
+
+        /* Research interests */
+        .research-interests {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        /* Publication styling */
+        .publication-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .publication-item:last-child {
+            border-bottom: none;
+        }
+
+        .publication-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .publication-authors {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 2px;
+        }
+
+        .publication-venue {
+            font-size: 13px;
+            color: #999;
+        }
+
+        .publication-link {
+            font-size: 12px;
+            color: #0066cc;
+        }
+
+        /* Subsection headers */
+        h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        /* Compact items */
+        .compact-item {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .compact-item strong {
+            font-weight: 600;
+        }
+
+        /* Skills section */
+        .skills-list {
+            font-size: 14px;
+            line-height: 2;
+            color: #333;
+        }
+
+        .skill-separator {
+            color: #999;
+            margin: 0 8px;
+        }
+
+        /* Language item */
+        .language-item {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        /* Media coverage section */
+        .media-item {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .media-item a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .media-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .name-vertical {
+                writing-mode: horizontal-tb;
+                transform: none;
+                font-size: 48px;
+                letter-spacing: 2px;
+                position: static;
+                margin-bottom: 30px;
+            }
+
+            .sidebar-bottom {
+                position: static;
+                margin-top: 40px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+        }
+
+        @media print {
+            body {
+                padding: 0;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+
+            h2 {
+                page-break-after: avoid;
+            }
+
+            .experience-item,
+            .education-item,
+            .publication-item {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="name-vertical">TIAN YAO</div>
+            
+            <div class="sidebar-bottom">
+                <div class="sidebar-section">
+                    <h3>PORTFOLIO</h3>
+                    <p><a href="https://tyaobbe9.myportfolio.com">tyaobbe9.myportfolio.com</a></p>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3>CONTACT</h3>
+                    <p>319-412-9322</p>
+                    <p><a href="/cdn-cgi/l/email-protection#66121f0709260f07151207120348030213"><span class="__cf_email__" data-cfemail="75010c141a351c1406011401105b101100">[email&#160;protected]</span></a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="header-info">
+                <div class="title">M.A., Ph.D. Student</div>
+            </div>
+
+            <section>
+                <h2>EDUCATION</h2>
+                
+                <div class="education-item">
+                    <div class="item-title">Ph.D. in Human–Computer Interaction (Expected Aug 2026)</div>
+                    <div class="item-meta">Iowa State University, Ames, IA <span>| GPA: 3.95/4.0</span></div>
+                    <div class="item-description">
+                        Major Professor: Dr. Michael Dorneich
+                    </div>
+                </div>
+
+                <div class="education-item">
+                    <div class="item-title">M.A. in Experiential Graphic Design (Expected May 2026)</div>
+                    <div class="item-meta">Iowa State University, Ames, IA</div>
+                    <div class="item-description">
+                        Major Professor: Prof. Tina Rice
+                    </div>
+                </div>
+
+                <div class="education-item">
+                    <div class="item-title">M.S. in Industrial Design (2020)</div>
+                    <div class="item-meta">South China University of Technology, Guangzhou, China</div>
+                    <div class="item-description">
+                        Major Professor: Dr. Wei Xiong
+                    </div>
+                </div>
+
+                <div class="education-item">
+                    <div class="item-title">B.E. in Food Quality and Safety (2017)</div>
+                    <div class="item-meta">Qingdao Agricultural University, Qingdao, China</div>
+                </div>
+
+                <h3>Exchange Studies</h3>
+                <div class="compact-item">Pittsburg State University (Graphic Design, Aug–Nov 2018)</div>
+                <div class="compact-item">Konkuk University, Seoul, South Korea (Food Science, Aug–Nov 2015)</div>
+            </section>
+
+            <section>
+                <h2>RESEARCH INTERESTS</h2>
+                <div class="research-interests">
+                    Human–Computer Interaction (HCI); Human Factors; Inclusive and community-centered design;<br>
+                    User experience and interface design.
+                </div>
+            </section>
+
+            <section>
+                <h2>RESEARCH EXPERIENCE</h2>
+                
+                <div class="experience-item">
+                    <div class="item-title">Graduate Research Assistant</div>
+                    <div class="item-meta">Spring 2023 – Present <span>| Department of HCI, Iowa State University, Ames, IA</span></div>
+                    <div class="item-description">
+                        NSF-funded project: CommHEAT – A Community-Based Indoor Heat Alert System
+                        <ul>
+                            <li>Led UX and UI design for a data-driven mobile heat alert app supporting vulnerable residents.</li>
+                            <li>Conducted user research using surveys, interviews, and usability testing.</li>
+                            <li>Applied inclusive design principles to ensure accessibility.</li>
+                            <li>Collaborated with multidisciplinary teams (engineering, architecture, and psychology).</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>PUBLICATIONS</h2>
+                
+                <h3>Peer-Reviewed Conference Proceedings & Presentations</h3>
+                
+                <div class="publication-item">
+                    <div class="publication-authors"><strong>Yao, T.</strong>, Dorneich, M. C., Thomas, R., Brito Diaz, A., Maduwuba, C., Schwab, N., Losch, M., Krejci, C. C., Caron, J., & Passe, U. (2025).</div>
+                    <div class="publication-title">Evaluating User Perceptions and Usability of CommHEAT: A Community-Based Heat Alert Application.</div>
+                    <div class="publication-venue">Proceedings of the Human Factors and Ergonomics Society Annual Meeting, 0(0).</div>
+                    <div class="publication-link"><a href="https://doi.org/10.1177/10711813251359996">https://doi.org/10.1177/10711813251359996</a></div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-authors"><strong>Yao, T.</strong>, Dorneich, M. C., Passe, U., Schwab, N., Losch, M., Krejci, C. C., & Caron, J. (2024).</div>
+                    <div class="publication-title">Vulnerable Communities in the Face of Heat: A Pilot Study on Perceptions, Behaviors, and Support Networks During Heat Events.</div>
+                    <div class="publication-venue">Proceedings of the Human Factors and Ergonomics Society Annual Meeting, 68(1), 1890-1895.</div>
+                    <div class="publication-link"><a href="https://doi.org/10.1177/10711813241261378">https://doi.org/10.1177/10711813241261378</a></div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-authors">Xiong, W., <strong>Yao, T.</strong>, Pan, Q., & Liu, Z. (2020).</div>
+                    <div class="publication-title">Usability heuristic evaluation for the hearing impaired language training mobile app.</div>
+                    <div class="publication-venue">In Design, User Experience, and Usability. Interaction Design: 9th International Conference, DUXU 2020, Held as Part of the 22nd HCI International Conference, HCII 2020, Copenhagen, Denmark, July 19–24, 2020, Proceedings, Part I 22 (pp. 294-307). Springer International Publishing.</div>
+                    <div class="publication-link"><a href="https://doi.org/10.1007/978-3-030-49713-2_21">https://doi.org/10.1007/978-3-030-49713-2_21</a></div>
+                </div>
+
+                <h3>Teaching Resource Publication</h3>
+                
+                <div class="publication-item">
+                    <div class="publication-authors"><strong>Yao, T.</strong> (2024).</div>
+                    <div class="publication-title">Bridging community history through interactive media.</div>
+                    <div class="publication-venue">In Chicago Designs: Teaching Community-Based Histories. Art Design Chicago & Terra Foundation for American Art.</div>
+                    <div class="publication-link">Available online: <a href="https://www.designchicago.org/chicago-designs-participants1?rq=tian%20yao">https://www.designchicago.org/chicago-designs-participants1?rq=tian%20yao</a></div>
+                </div>
+
+                <h3>Manuscripts in Progress</h3>
+                
+                <div class="publication-item">
+                    <div class="publication-authors">Wilhelmi, O. V., Hayden, M. H., Howe, P., Vanos, J., Meerow, S., Habeeb, D., He, C., Passe, U., <strong>Yao, T.</strong>, Leal, R., Kumar, R., Crawford, B., Lanza, K., Molla, A., Newman, A., Laverty, A., Iradukunda, J. C., Frank, C., & Visintainer, T. (under review).</div>
+                    <div class="publication-title">Human and geographic dimensions of heat risk: Progress, challenges, and opportunities.</div>
+                    <div class="publication-venue">Manuscript submitted for publication in Environmental Research Letters.</div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-title">Linking Attitudes, Norms, and Control to Heat Adaptation: A Real-Time Behavioral Perspective</div>
+                    <div class="publication-venue">(In progress)</div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-title">Designing Climate Awareness with Youth: A Co-Design Jam on Heat and Health</div>
+                    <div class="publication-venue">(In progress)</div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-title">Designing a Community-Based Indoor Heat Alert App Informed by Behavioral Theory</div>
+                    <div class="publication-venue">(In progress)</div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-title">Evaluating Behavioral Change through a Theory-Informed Heat Alert System</div>
+                    <div class="publication-venue">(In progress)</div>
+                </div>
+            </section>
+
+            <section>
+                <h2>CONFERENCE PRESENTATIONS AND ABSTRACTS</h2>
+                
+                <div class="publication-item">
+                    <div class="publication-authors"><strong>Yao, T.</strong>, Passe, U., & Dorneich, M. (2025, June 23–24).</div>
+                    <div class="publication-title">A community-based mobile application for indoor heat risk mitigation.</div>
+                    <div class="publication-venue">[Conference presentation]. NSF NCAR Extreme Heat Research Symposium on Human and Geographic Dimensions of Extreme Heat and Heat Risk, Boulder, CO, United States.</div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-authors"><strong>Yao, T.</strong> (2025, October).</div>
+                    <div class="publication-title">Designing for vulnerable populations: A journey from hearing loss training to heat alert systems.</div>
+                    <div class="publication-venue">[Conference abstract]. SECAC (formerly the Southeastern College Art Conference), Cincinnati, OH, United States.</div>
+                </div>
+            </section>
+
+            <section>
+                <h2>TEACHING EXPERIENCE</h2>
+                
+                <div class="experience-item">
+                    <div class="item-title">Instructor</div>
+                    <div class="item-meta">Spring 2025 <span>| Iowa State University</span></div>
+                    <div class="item-description">
+                        Course: HON-3210 Visual Storytelling in the Digital Age (Honors Seminar)
+                        <ul>
+                            <li>Designed and taught course integrating visual communication and digital storytelling.</li>
+                            <li>Implemented interactive lectures, case studies, and in-class activities.</li>
+                            <li>Encouraged creative projects connecting visual narrative and digital media.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-title">Graduate Mentor, SPIRE-EIT Program</div>
+                    <div class="item-meta">Summer 2024 <span>| Virtual Reality Applications Center, Iowa State University</span></div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Mentored 3 undergraduates in user-centered design methods and research process.</li>
+                            <li>Monitored weekly progress and guided the interdisciplinary project.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-title">Teaching Assistant, Department of Graphic Design</div>
+                    <div class="item-meta">Fall 2021 – Spring 2022 <span>| Iowa State University</span></div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Assisted in planning and organizing the 2022 Graduation Show for undergraduate exhibits.</li>
+                            <li>Designed the graduation catalog (InDesign) and developed an exhibition website (SquareSpace).</li>
+                            <li>Assisted in preparing course materials and slides.</li>
+                            <li>Provided substitute teaching when the instructor was away on business.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-title">Upward Bound Residence Advisor (RA)</div>
+                    <div class="item-meta">Summer 2022 <span>| Iowa State University</span></div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Taught life skills class to first-generation, 30 low-income high school students.</li>
+                            <li>Independently supervised and mentored 10 students as dorm and program RA.</li>
+                            <li>Collaborated with 2 RA's and 2 staff members for programming and events.</li>
+                            <li>Served as program photographer, videographer, and created final video.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>WORK EXPERIENCE</h2>
+                
+                <div class="experience-item">
+                    <div class="item-title">Recruitment Graphic Designer</div>
+                    <div class="item-meta">Aug 2022 – Dec 2022 <span>| Graphic Design Department, Iowa State University, Ames, IA</span></div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Assisted staff graphic designer with the creation of social media assets (static and video), including social feed images and Instagram stories.</li>
+                            <li>Designed magazines, information board and other marketing assets.</li>
+                            <li>Photograph and photo retouching.</li>
+                            <li>Followed and maintained brand identity characteristics, typography, photography, color etc.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-title">Graphic Designer Intern</div>
+                    <div class="item-meta">Aug 2022 – Nov 2022 <span>| Iowa State University Alumni Association, Ames, IA</span></div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Concepted, developed and executed a wide variety of assets for digital applications, website needs, marketing and PR initiatives, digital ads, mobile, and social media channels, on-site events, campaigns.</li>
+                            <li>Adhered to brand guidelines and complete projects according to the deadline.</li>
+                            <li>Retouched and manipulated images.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-title">UX/UI Designer</div>
+                    <div class="item-meta">Jun 2020 – Jun 2021 <span>| Shenzhen Coocaa Network Tech Co., Ltd, Shenzhen, China</span></div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Designed the UI for Coocaa overseas TV system (Weather app, Screensaver app, update the main interface, etc).</li>
+                            <li>Created the UI for the APP called GongXiangPing (Cheese Video Applet, Cloud Drive Applet, Mall applet/Modules, etc.).</li>
+                            <li>Designed logos for Coocaa overseas TV system.</li>
+                            <li>Wrote user experience reports and competitor analysis reports.</li>
+                            <li>Communicated with design companies to collaborate projects and control design quality.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-title">UX Designer</div>
+                    <div class="item-meta">Apr 2019 – Jul 2019 <span>| Netease Game, Guangzhou, China</span></div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Devised the game (Chnryouji firm) UX design (included the achievement system, battle system, story editor, card system, etc.).</li>
+                            <li>Developed Unity 3D UI design.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-title">UX/UI Designer</div>
+                    <div class="item-meta">Sep 2017 – Feb 2018 <span>| Guangzhou Voibook Technology Co., Ltd., Guangzhou, China</span></div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Designed the UX / UI for Voibook APP (Speech recognition, video call modules, VIP modules, etc).</li>
+                            <li>Researched and designed Voibook speech training APP.</li>
+                            <li>Created marketing materials (brochures, posters, social media graphics, etc.).</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>ART EXHIBITIONS</h2>
+                
+                <div class="exhibition-item">
+                    <div class="item-description">
+                        <strong>2024.10</strong><br>
+                        Tethered Hearts, 'Bloom' Student Exhibition, Mainframe Studios, Des Moines, IA<br>
+                        Tulip, 'Bloom' Student Exhibition, Mainframe Studios, Des Moines, IA
+                    </div>
+                </div>
+
+                <div class="exhibition-item">
+                    <div class="item-description">
+                        <strong>2024.8</strong><br>
+                        Warmth Amidst the Cold, Contemporary Lens Student Photography Exhibition, Mainframe Studios, Des Moines, IA
+                    </div>
+                </div>
+
+                <div class="exhibition-item">
+                    <div class="item-description">
+                        <strong>2024.6</strong><br>
+                        Spectrum of Harmony, Effervescence: perspectives from the ISU LGBTQIA+ student community and allies, Mainframe Studios, Des Moines, IA
+                    </div>
+                </div>
+
+                <div class="exhibition-item">
+                    <div class="item-description">
+                        <strong>2022.10-11</strong><br>
+                        Blooming, Studies in Creativity Exhibition, ISU Memorial Union, Ames, IA
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>MEDIA COVERAGE (2025)</h2>
+                
+                <div class="media-item">
+                    <strong>ISU News Release (Oct 23, 2025)</strong><br>
+                    <a href="https://www.news.iastate.edu/news/researchers-pilot-potentially-life-saving-heat-alertapp">https://www.news.iastate.edu/news/researchers-pilot-potentially-life-saving-heat-alertapp</a>
+                </div>
+
+                <div class="media-item">
+                    <strong>The Gazette (Nov 2, 2025)</strong><br>
+                    <a href="https://www.thegazette.com/environment-nature/as-heat-waves-intensify-in-iowa-amobile-app-aims-to-prevent-heat-related-illnesses/">https://www.thegazette.com/environment-nature/as-heat-waves-intensify-in-iowa-amobile-app-aims-to-prevent-heat-related-illnesses/</a>
+                </div>
+
+                <div class="media-item">
+                    <strong>Iowa Capitol Dispatch (Nov 3, 2025)</strong><br>
+                    <a href="https://iowacapitaldispatch.com/2025/11/03/iowa-state-university-researchers-developapp-to-predict-indoor-heat-waves/">https://iowacapitaldispatch.com/2025/11/03/iowa-state-university-researchers-developapp-to-predict-indoor-heat-waves/</a>
+                </div>
+
+                <div class="media-item">
+                    <strong>Iowa Public Radio River to River (Nov 12, 2025)</strong><br>
+                    <a href="https://www.iowapublicradio.org/podcast/river-to-river/2025-11-12/rural-areasstruggle-to-attract-maintain-lawyers">https://www.iowapublicradio.org/podcast/river-to-river/2025-11-12/rural-areasstruggle-to-attract-maintain-lawyers</a> (at the 32 minute mark)
+                </div>
+
+                <div class="media-item">
+                    <strong>Axios (Nov 13, 2025)</strong><br>
+                    <a href="https://www.axios.com/local/des-moines/2025/11/13/new-app-alerts-homeowners-torising-indoor-heat">https://www.axios.com/local/des-moines/2025/11/13/new-app-alerts-homeowners-torising-indoor-heat</a>
+                </div>
+            </section>
+
+            <section>
+                <h2>SERVICE & LEADERSHIP</h2>
+                
+                <div class="experience-item">
+                    <div class="item-title">HFES Student Chapter, Communication Director</div>
+                    <div class="item-meta">August 2025 - Now</div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Responsible for creating and maintaining electronic and written forms of communication within and beyond the Chapter, including a periodic newsletter and a website.</li>
+                            <li>Maintain active profiles on platforms like LinkedIn.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-title">Adaptive Cognitive Systems Lab Webmaster</div>
+                    <div class="item-meta">August 2023 - Aug 2025</div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Manage adaptive cognitive systems lab's website at ISU - <a href="https://www.imse.iastate.edu/acsl/">https://www.imse.iastate.edu/acsl/</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-title">ISU International Students and Scholars Office (ISSO)</div>
+                    <div class="item-meta">2023</div>
+                    <div class="item-description">
+                        Cultural Ambassador
+                        <ul>
+                            <li>Represented the ISSO at campus events and orientations, delivering presentations on cultural awareness and support services.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-title">Student Union of School of Design of SCUT</div>
+                    <div class="item-meta">2017 - 2020</div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Promoted and publicized 5 seminar events.</li>
+                            <li>Organized students activities (sports meeting, welcome party, etc).</li>
+                            <li>Designed posters for seminars.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-title">Volunteer Association of Qingdao Agricultural University</div>
+                    <div class="item-meta">2014 - 2017</div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Oversaw volunteers recruitment for events.</li>
+                            <li>Designed logos, posters, mascots, etc for the association.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>AWARDS & SCHOLARSHIPS</h2>
+                
+                <h3>Research & Academic Awards (2024-2025)</h3>
+                <div class="compact-item">• Best Interdisciplinary Collaboration & People's Choice Award - HCI 20th Anniversary Poster Competition ($200)</div>
+                <div class="compact-item">  "Vulnerable Communities in the Face of Heat: A Pilot Study on Perceptions, Behaviors, and Support Networks During Heat Events"</div>
+                
+                <h3>Travel Scholarships</h3>
+                <div class="compact-item">• NSF NCAR Extreme Heat Research Symposium (2025): $1,000</div>
+                <div class="compact-item">• Chicago Designs: Teaching Community-Based Histories Workshop (2024): $1,200</div>
+                <div class="compact-item">• Exploring Extreme Heat Risks through Geospatial Storytelling GIS Workshop (2025): $600</div>
+                <div class="compact-item">• Honors Seminar Professional Development Scholarship (2024): $500</div>
+                <div class="compact-item">• HCI Department Travel Scholarship (2024): $500</div>
+                <div class="compact-item">• HCI Department Travel Scholarship (2025): $500</div>
+                <div class="compact-item">• Graphic Design Department Travel Scholarship (2025): $400</div>
+                
+                <h3>Competition Awards (2015-2018)</h3>
+                <div class="compact-item">• "Youth Innovation" — Zhejiang University Entrepreneurship Public Welfare Competition, Gold Award (2018)</div>
+                <div class="compact-item">• "Challenge Cup – Youth Innovation" — Guangdong College Student Entrepreneurship Competition, Gold Award (2018)</div>
+                <div class="compact-item">• 10th "Challenge Cup – Youth Innovation" Entrepreneurship Competition, South China University of Technology, Gold Award (2018)</div>
+                <div class="compact-item">• Guangzhou College Town Satellite Town Innovation and Entrepreneurship Contest, Third Prize (2017)</div>
+                <div class="compact-item">• "Sinopec" New Gas Station Service Experience Design Competition, First Prize (2017)</div>
+                <div class="compact-item">• National College English Competition (Category C), Second Prize (2015)</div>
+                
+                <h3>Academic Scholarships</h3>
+                <div class="compact-item">• First-Class and Second-Class Scholarships, South China University of Technology (2013–2018)</div>
+            </section>
+
+            <section>
+                <h2>PROFESSIONAL MEMBERSHIPS</h2>
+                
+                <div class="compact-item">Human Factors and Ergonomics Society (HFES) Member, 2024–Present</div>
+                <div class="compact-item">Southeastern College Art Conference (SECAC) Member, 2025–Present</div>
+            </section>
+
+            <section>
+                <h2>LANGUAGES</h2>
+                
+                <div class="language-item">English – Proficient (Reading, Writing, Speaking)</div>
+   
