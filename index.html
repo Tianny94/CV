@@ -41,7 +41,7 @@
             font-size: 72px;
             font-weight: 900;
             letter-spacing: 20px;
-            margin-bottom: 200px;  /* 你要多大就调多大 */
+            margin-bottom: 300px;  /* 你要多大就调多大 */
         }
 
         .sidebar-bottom {
@@ -258,11 +258,21 @@
                 font-size: 48px;
                 letter-spacing: 2px;
                 position: static !important;
-                margin-bottom: 30px;
+                bottom: auto !important;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                transform: none !important;
             }
 
             .sidebar-bottom {
-                position: static !important;
+                .sidebar-bottom {
+                    position: static !important;
+                    bottom: auto !important;
+                    top: auto !important;
+                    left: auto !important;
+                    right: auto !important;
+                    transform: none !important;
             }
 
             h2 {
