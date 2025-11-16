@@ -30,7 +30,9 @@
 
         /* Left sidebar with name */
         .sidebar {
-            position: relative;
+            position: sticky;
+            top: 40px; /* 或你想要的距离 */
+            align-self: start;
         }
 
         .name-vertical {
@@ -39,17 +41,10 @@
             font-size: 72px;
             font-weight: 900;
             letter-spacing: 20px;
-            position: sticky;
-            top: 40px;
-            height: fit-content;
         }
 
         .sidebar-bottom {
-            position: sticky;
-            top: 80px;
-            height: fit-content;
-            left: 0;
-            width: 100%;
+            margin-top: 60px; /* 你可以根据视觉需求调整 */
         }
 
         .sidebar-section {
@@ -365,10 +360,12 @@
                 <h3>Exchange Studies</h3>
                 <div class="compact-item">Pittsburg State University (Graphic Design, 2015.08–2015.11)</div>
                 <div class="compact-item">Konkuk University, Seoul, South Korea (Food Science, Aug–Nov 2015)</div>
+                
             </section>
 
             <section>
                 <h2>RESEARCH INTERESTS</h2>
+                
                 <div class="research-interests">
                     Human–Computer Interaction (HCI); Human Factors; Inclusive and community-centered design;<br>
                     User experience and interface design.
@@ -459,7 +456,7 @@
                 </div>
             </section>
 
-                            <h2>TEACHING EXPERIENCE</h2>
+                <h2>TEACHING EXPERIENCE</h2>
                 
                 <div class="experience-item">
                     <div class="item-title">Instructor</div>
@@ -691,6 +688,7 @@
 
             <section>
                 <h2>AWARDS & SCHOLARSHIPS</h2>
+                
                     <h3>2025</h3>
                     <div class="item-description">
                         <ul>
@@ -749,6 +747,7 @@
                             <li>First-Class and Second-Class Scholarships, South China University of Technology</li>
                         </ul>
                     </div>
+                
             </section>
 
             <section>
